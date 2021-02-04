@@ -1,12 +1,8 @@
 require "Stef/Rousset_palindrome/version"
 
-# module Stef
-#   module RoussetPalindrome
-#     class Error < StandardError; end
-#     # Your code goes here...
-#   end
-# end
-  class String
+module Stef
+  module RoussetPalindrome
+    class Error < StandardError; end
 
     # Returns true for a palindrome, false otherwise.
     def palindrome?
@@ -19,8 +15,19 @@ require "Stef/Rousset_palindrome/version"
 
     private
 
-      # Returns content for palindrome testing.
-      def processed_content
-        self.gsub(/[\W\s]/, '').downcase
-      end
+    # Returns content for palindrome testing.
+    def processed_content
+      self.to_s.gsub(/[\W\s]/, '').downcase
+    end
   end
+end
+
+class String
+  include Stef
+  include RoussetPalindrome
+end
+
+class Integer
+  include Stef
+  include RoussetPalindrome
+end
