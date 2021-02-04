@@ -13,14 +13,14 @@ require "Stef/Rousset_palindrome/version"
       processed_content == processed_content.reverse
     end
 
-    def letters
-      self.gsub(/[\W\s]/, '')
-    end
+    # def letters
+    #   self.gsub(/[\W\s]/, '')
+    # end
 
     private
 
       # Returns content for palindrome testing.
       def processed_content
-        self.letters.downcase
+        self.gsub(/[\W\s]/, '').downcase
       end
   end
