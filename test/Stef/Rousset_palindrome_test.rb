@@ -35,4 +35,8 @@ class Stef::RoussetPalindromeTest < Minitest::Test
   def test_integer_palindrome
     assert 12321.palindrome?
   end
+
+  def string_of_spaces_not_palindrome
+    refute "  ".palindrome?
+  end
 end
